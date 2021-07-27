@@ -1,0 +1,36 @@
+* {
+  font-family: Helvetica;
+}
+
+.container {
+  margin-left: 30px;
+}
+
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 3px;
+  color: #328f41;
+}
+h3 {
+  font-style: italic;
+  font-weight: 400;
+}
+p.enter {
+  color: #328f41;
+}
+
+.new-account-name {
+  border-radius: 10px;
+}
+
+button {
+  color: green;
+  background-color: lightgray;
+  border-radius: 10px;
+  border: none;
+  padding: 10px 55px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: darkgrey;
+}
