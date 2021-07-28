@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* wraps around entire navbar */
+section.hero-and-header {
+  background-color: #ff9065;
+}
+
+.main-header {
+  /* color & styling */
+  color: white;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: lighter;
+  /* this combo centers content inside div */
+  display: flex;
+  align-items: center;
+  /* this pushes the divs inside apart */
+  justify-content: space-between;
+  /* centers */
+  margin: auto;
+  height: 80px;
+  width: 95%;
+}
+/* ZELMA VALENTIA */
+.header-text {
+  display: flex;
+  /* floats logo to left */
+  justify-self: start;
+  font-size: 30px;
+  font-weight: 300;
+  margin-left: 50px;
+}
+
+/* hamburger menu (hidden on desktop) */
+.hamburger {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+/* nav-menu: surrounds <a> tags */
+.nav-menu {
+  margin: 20px;
+}
+
+a {
+  /* styling */
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 100;
+  /* positioning */
+  margin: 10px;
+}
+.nav-menu a:hover {
+  text-decoration: underline;
+}
+/*** END Navigation Section ************/
+
+/*** Hero Section **********************/
+.hero {
+  /* centering magic */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-div {
+  /* allows text to float by image */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+
+  /* positioning */
+  margin: 100px;
+}
+.my-pic {
+  max-height: 130px;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 500px;
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
+  /* left: 0 */
+}
+.hero-div-text {
+  margin-left: 10px;
+}
+h2.hero-text {
+  padding: 7px;
+  font-size: 29px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 100;
+  color: white;
+}
+
+@media only screen and (min-width: 750px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/****** MOBILE view *******/
+@media only screen and (max-width: 750px) {
+  .main-header {
+    margin-left: 20px;
+  }
+
+  .header-text {
+    font-size: 38px;
+    margin-left: 10px;
+  }
+
+  .nav-div {
+    display: none;
+  }
+}
+
+/* change hero-div to display block in mobile */
