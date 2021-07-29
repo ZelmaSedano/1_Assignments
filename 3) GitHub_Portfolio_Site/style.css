@@ -43,6 +43,11 @@ section.hero-and-header {
   margin-right: 20px;
   cursor: pointer;
 }
+@media only screen and (min-width: 750px) {
+  .hamburger {
+    display: none;
+  }
+}
 
 .nav-div {
   margin-right: 40px;
@@ -156,16 +161,37 @@ p span {
 .contact {
   margin: 10px 0 50px 0;
 }
+@media only screen and (max-width: 900px) {
+  .contact {
+    margin: 0 auto 100px auto;
+  }
+}
 
 .contact h4 {
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 200;
   font-size: 20px;
   color: #696969;
-  line-height: 1.5;
   text-align: center;
 }
 
+.input-container {
+  width: 650px;
+  max-width: 100%;
+  margin: 20px auto 25px auto;
+}
+@media only screen and (max-width: 768px) {
+  .input-container {
+    width: 300px;
+    margin: 20px auto;
+  }
+}
+
+/*** Styling for Input Forms ***********************/
+/* when you float things, they are taken out of the document flow; I think this is why when I try to change the margin around the parent section/div, they don't work - this form is taken out of the document flow.
+
+Luckily, I figured out a work-around where I pushed the footer further down the page to create spacing below form
+*/
 .styled-input {
   float: left;
   width: 293px;
@@ -173,35 +199,19 @@ p span {
   position: relative;
   border-radius: 4px;
 }
-/* floats phone label right */
-.phone {
-  float: right;
-}
-
 @media only screen and (max-width: 768px) {
   .styled-input {
     width: 100%;
   }
 }
 
-.styled-input label {
-  color: rgb(246, 246, 246);
-  font-family: 'Noto Sans JP', sans-serif;
-  padding: 1.3rem 30px 1rem 30px;
-  position: absolute;
-  top: 10px;
-  left: 0;
-  transition: all 0.25s ease;
-  pointer-events: none;
-}
-
 .styled-input.wide {
-  width: 650px;
+  width: 100%;
   max-width: 100%;
 }
 
-input,
-textarea {
+/* input fields styling */
+input {
   padding: 30px;
   border: 0;
   width: 100%;
@@ -210,33 +220,63 @@ textarea {
   color: white;
   border-radius: 4px;
 }
-
-input:focus,
-textarea:focus {
+input:focus {
   outline: 0;
 }
+/* ^when you select input, it doesn't get a border around it */
 
-input:focus ~ span,
-textarea:focus ~ span {
+/* area above the input, which we aren't using, but we're styling for spacing */
+.styled-input label {
+  /* allows you to pull fields closer */
+  position: absolute;
+  top: 10px;
+  /* ^ pull fields closer */
+}
+
+/* floats phone label right */
+.phone {
+  float: right;
+}
+
+.state {
+  margin-left: 64px;
   width: 100%;
-  -webkit-transition: all 0.075s ease;
-  transition: all 0.075s ease;
+  height: 50px;
+  position: relative;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
-textarea {
-  width: 100%;
-  min-height: 10em;
+/* dropdown menu */
+select {
+  width: 700px;
+  height: 79px;
+  min-width: 15ch;
+  max-width: 30ch;
+  /* resets border color */
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #ff9065;
+  background-image: #ff9065;
+  color: rgb(243, 243, 243);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 100;
+}
+@media (max-width: 768px) {
+  select {
+    width: 200%;
+    float: none;
+    text-align: center;
+  }
 }
 
-.input-container {
-  width: 650px;
-  max-width: 100%;
-  margin: 20px auto 25px auto;
-}
-
+/* change to button, but keep styling */
 .submit-btn {
   float: right;
-  padding: 7px 35px;
+  padding: 10px 35px;
   border-radius: 60px;
   display: inline-block;
   font-family: 'Noto Sans JP', sans-serif;
@@ -244,9 +284,12 @@ textarea {
   color: white;
   font-size: 18px;
   cursor: pointer;
+  margin: 20px 0 0 0;
+  /* slows down the transform effect */
   transition: all 300ms ease;
 }
 .submit-btn:hover {
+  /* button moves down 1px when hovered over */
   transform: translateY(1px);
 }
 
@@ -268,18 +311,30 @@ input[type='checkbox']:checked + label {
   font-style: normal;
 }
 
-@media only screen and (min-width: 750px) {
-  .hamburger {
-    display: none;
+/*** Footer Section ************************/
+.footer {
+  background-color: #ff9065;
+  height: 50px;
+  margin: 600px 0 -10px 0;
+}
+@media only screen and (max-width: 750px) {
+  .footer {
+    margin: 100px 0 0 0;
   }
+}
+.footer-div {
+  /* centering magic */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.footer-div p {
+  color: white;
 }
 
 /****** MOBILE view *******/
 @media only screen and (max-width: 750px) {
-  .main-header {
-    margin-left: 20px;
-  }
-
   .header-text {
     font-size: 38px;
     margin-left: 10px;

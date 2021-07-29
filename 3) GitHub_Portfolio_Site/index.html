@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +11,7 @@
 
   <!-- FONT AWESOME -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
-  integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,8 +19,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet">
 </head>
+
 <body>
-  
+
   <section class='hero-and-header wave'>
     <!------------------- Header ------------------->
     <div class='main-header'>
@@ -44,14 +46,14 @@
     <!------------------ Hero ------------------->
     <section class='hero'>
       <div class='hero-div'>
-        <img class='my-pic' src='./img/me.png' alt='Zelma Valentia'/>
+        <img class='my-pic' src='./img/me.png' alt='Zelma Valentia' />
         <div class='hero-div-text'>
           <h2 class='hero-text'>Hi, I'm Zelma Valentia.</h2>
           <h2 class='hero-text'>Let me make your site!</h2>
         </div>
       </div>
     </section>
-  </section>  
+  </section>
   <!-- END of hero-and-header section -->
 
   <!------------------ About Section ------------------->
@@ -61,7 +63,8 @@
 
       <p class='high'>Designer. Foodie. Dreamer.</p>
 
-      <p>Chicago via Oslo, Norway via Mississippi.  I am a Southern LatinX who looks for beauty in all things, the wonder in every story, and the next big idea.</p>
+      <p>Chicago via Oslo, Norway via Mississippi. I am a Southern LatinX who looks for beauty in all things, the wonder
+        in every story, and the next big idea.</p>
 
       <p class='high'>Say hi on Twitter <span>@TSockk.</span></p>
     </div>
@@ -69,39 +72,117 @@
 
   <!------------------ Contact Section ------------------->
   <section class="contact">
-      <h4>I'd love to hear from you!</h4>
+    <div class='contact-text'>
+      <h4>I'd love to hear from you! But this form doesn't work, yet.</h4>
+    </div>
+    <!-- Form -->
     <div class="input-container">
-      <div class="col-xs-12">
-        <div class="styled-input wide">
-          <input type="text" required />
-          <label>Name</label>
-        </div>
-      </div>
-      
+
+      <!-- First Name -->
       <div class="styled-input">
-        <input type="text" required />
-        <label>Email</label>
+        <!-- input tag, holds placeholder and id's -->
+        <input type="text" id='fname' name='fname' placeholder='First Name' required />
+        <label for='fname'></label>
       </div>
-      
-      <div>
-        <div class="styled-input phone">
-          <input type="text" required />
-          <label>Phone Number</label>
-        </div>
+
+      <div class="styled-input phone">
+        <input type="text" id='lname' name='lname' placeholder='Last Name' required />
+        <label for='lname'></label>
       </div>
-      <div>
-        <div class="styled-input wide">
-          <textarea required></textarea>
-          <label>Message</label>
-        </div>
+
+      <div class="styled-input">
+        <input type='email' id='email' placeholder='Email' required />
+        <label for='email'></label>
       </div>
-      <div>
-        <div class="btn-lrg submit-btn">Send Message</div>
+
+      <!-- keep phone class, it floats input right in CSS -->
+      <div class='styled-input phone'>
+        <input type='tel' id='phone' name='phone' placeholder="Phone Number" required />
+        <label for='phone'></label>
       </div>
+
+      <!-- Address -->
+      <div class="styled-input wide">
+        <input type="street" id='street' placeholder='Street Address' required />
+        <label></label>
+      </div>
+
+      <div class='styled-input'>
+        <input type="city" class="form-control" id="inputCity" placeholder="City" required>
+      </div>
+
+      <div class='styled-input state' style="width: 200px;">
+        <select name="state" id="state">
+          <option value="" selected="selected">Select a State</option>
+          <option value="AL">Alabama</option>
+          <option value="AK">Alaska</option>
+          <option value="AZ">Arizona</option>
+          <option value="AR">Arkansas</option>
+          <option value="CA">California</option>
+          <option value="CO">Colorado</option>
+          <option value="CT">Connecticut</option>
+          <option value="DE">Delaware</option>
+          <option value="DC">District Of Columbia</option>
+          <option value="FL">Florida</option>
+          <option value="GA">Georgia</option>
+          <option value="HI">Hawaii</option>
+          <option value="ID">Idaho</option>
+          <option value="IL">Illinois</option>
+          <option value="IN">Indiana</option>
+          <option value="IA">Iowa</option>
+          <option value="KS">Kansas</option>
+          <option value="KY">Kentucky</option>
+          <option value="LA">Louisiana</option>
+          <option value="ME">Maine</option>
+          <option value="MD">Maryland</option>
+          <option value="MA">Massachusetts</option>
+          <option value="MI">Michigan</option>
+          <option value="MN">Minnesota</option>
+          <option value="MS">Mississippi</option>
+          <option value="MO">Missouri</option>
+          <option value="MT">Montana</option>
+          <option value="NE">Nebraska</option>
+          <option value="NV">Nevada</option>
+          <option value="NH">New Hampshire</option>
+          <option value="NJ">New Jersey</option>
+          <option value="NM">New Mexico</option>
+          <option value="NY">New York</option>
+          <option value="NC">North Carolina</option>
+          <option value="ND">North Dakota</option>
+          <option value="OH">Ohio</option>
+          <option value="OK">Oklahoma</option>
+          <option value="OR">Oregon</option>
+          <option value="PA">Pennsylvania</option>
+          <option value="RI">Rhode Island</option>
+          <option value="SC">South Carolina</option>
+          <option value="SD">South Dakota</option>
+          <option value="TN">Tennessee</option>
+          <option value="TX">Texas</option>
+          <option value="UT">Utah</option>
+          <option value="VT">Vermont</option>
+          <option value="VA">Virginia</option>
+          <option value="WA">Washington</option>
+          <option value="WV">West Virginia</option>
+          <option value="WI">Wisconsin</option>
+          <option value="WY">Wyoming</option>
+        </select>
+      </div>
+      <!-- END ofAddress -->
+
+      <!-- Submit Button-->
+      <button class="submit-btn">Contact Zelma</button>
+
+    </div>
+  </section>
+  <!-- END OF FORM SECTION -->
+
+  <section class='footer'>
+    <div class='footer-div'>
+      <p>Thanks for visiting! Come back soon <3< /p>
     </div>
   </section>
 
 
-  
 </body>
+
 </html>
