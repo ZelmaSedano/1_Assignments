@@ -1,0 +1,262 @@
+/* GLOBAL: don't forget, this takes up the most energy - use sparingly */
+* {
+  box-sizing: border-box;
+  font-family: helvetica;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  /* keeps page from being too wide */
+  max-width: 1250px;
+  /* seemlessly centers the entire page */
+  margin: 10px auto;
+}
+
+/*** Header Section ****************/
+/* holds text & nav */
+.main-header {
+  /* color & styling */
+  color: #824e77;
+  font-family: helvetica;
+  font-weight: lighter;
+  /* this combo centers content inside div */
+  display: flex;
+  align-items: center;
+  /* this pushes the divs inside apart */
+  justify-content: space-between;
+  /* centers */
+  margin: auto;
+  height: 120px;
+  width: 95%;
+}
+/* Cook 'R Us */
+.header-text {
+  display: flex;
+  /* floats logo to left */
+  justify-self: start;
+  font-size: 50px;
+  margin-left: 40px;
+}
+
+/* hamburger menu (hidden on desktop) */
+.hamburger {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+/* nav-menu: surrounds <a> tags */
+.nav-menu {
+  margin: 20px;
+}
+
+a {
+  /* styling */
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 400;
+  /* positioning */
+  margin: 10px;
+}
+
+.nav-menu a:hover {
+  text-decoration: underline;
+  font-size: 21px;
+}
+/*** END Navigation Section ************/
+
+/*** Introduction Section **************/
+/* text below Header */
+.introduction {
+  font-size: 19px;
+  /* color & styling */
+  color: #665d58;
+  /* positioning */
+  width: 90%;
+}
+/* 'top' */
+.introduction span {
+  color: #f09156;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* button */
+.btn {
+  /* styling */
+  margin: 25px;
+  /* positioning */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* ^ centering magic */
+}
+button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 15px;
+  cursor: pointer;
+
+  text-align: center;
+}
+
+/* CENTERS Introduction Text */
+.intro-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* image div */
+.image {
+  /* centering magic */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* image at top */
+img {
+  max-width: 80%;
+  border-radius: 5px;
+}
+
+.recipe-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* ^ centering magic */
+}
+
+.recipe {
+  /* color & styling */
+  background-color: #e8dac5;
+  border-radius: 10px;
+
+  /* positioning */
+  max-width: 80%;
+  padding: 20px 40px; /* extra spacing around recipe */
+  margin-top: 50px;
+}
+
+.recipe-header {
+  /* color & styling */
+  color: #f09156;
+  font-family: Helvetica;
+  font-size: 25px;
+  font-weight: 400;
+  border-bottom: solid 1px;
+  padding: 5px;
+  /* positioning */
+  width: 90%;
+  margin-left: 20px;
+}
+
+/** INGREDIENTS (child) ************/
+/* 'Ingredients' text */
+.recipe-ingredients h3 {
+  color: #824e77;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+/* 'Shell, 'Filling' */
+.recipe-ingredients h4 {
+  margin-top: 20px;
+  margin-left: 20px;
+  color: #665d58;
+}
+
+.recipe-ingredients ul li {
+  /* move ingredients over slightly */
+  margin-left: 25px;
+  /* create spacing around each list item */
+  padding: 5px;
+  color: #665d58;
+  list-style: none;
+}
+/* toggle class / crossout code */
+/* .obtained {
+  text-decoration: line-through;
+  color: #ab9a91;
+} */
+
+/** INSTRUCTIONS (child) *****/
+.recipe-instructions {
+  color: #665d58;
+  margin-left: 20px;
+  width: 90%;
+}
+
+.recipe-instructions h3 {
+  color: #824e77;
+  font-weight: 400;
+  margin-left: 5px;
+  margin-top: 20px;
+}
+
+.recipe-instructions h4 {
+  margin-left: 3px;
+  margin-top: 10px;
+}
+
+.recipe-instructions ol li {
+  /* more height b/w each line */
+  line-height: 1.4;
+  /* spacing around each line item */
+  margin: 10px;
+}
+
+/****** DESKTOP view *******/
+@media only screen and (min-width: 750px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/****** MOBILE view *******/
+@media only screen and (max-width: 750px) {
+  .main-header {
+    margin-left: 20px;
+  }
+
+  .header-text {
+    font-size: 38px;
+    margin-left: 10px;
+  }
+
+  .nav-div {
+    display: none;
+  }
+
+  .introduction {
+    font-size: 17px;
+  }
+
+  button {
+    padding: 10px 15px;
+  }
+
+  img {
+    max-width: 90%;
+  }
+
+  .recipe {
+    margin-top: 20px;
+    max-width: 90%;
+    padding: 20px 15px; /* extra spacing around recipe */
+  }
+
+  .recipe-ingredients ul li {
+    font-size: 14px;
+  }
+
+  .recipe-instructions ol li {
+    font-size: 14px;
+  }
+}
