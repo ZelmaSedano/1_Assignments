@@ -89,7 +89,7 @@ button {
 
 @media only screen and (max-width: 768px) {
   .nav-menu {
-    position: fixed;
+    position: absolute;
     /* hides */
     left: -100%;
     /* pushes down */
@@ -119,6 +119,7 @@ button {
   .hamburger {
     display: block;
     cursor: pointer;
+    margin-top: 10px;
   }
 
   .hamburger.active .bar:nth-child(2) {
@@ -312,7 +313,7 @@ input {
   padding: 30px;
   border: 0;
   width: 100%;
-  font-size: 1rem;
+  font-size: 1.5rem;
   background-color: #ff9065;
   color: white;
   border-radius: 4px;
@@ -357,7 +358,7 @@ input:focus {
 /* dropdown menu */
 select {
   /* color & style */
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   cursor: pointer;
   line-height: 1;
   background-color: #ff9065;
@@ -366,13 +367,13 @@ select {
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 100;
   /* why won't it go wider??? */
-  width: 353px;
-  height: 79px;
+  width: 355px;
+  height: 75px;
   min-width: 15ch;
   max-width: 30ch;
   /* resets border color */
   border: 1px solid var(--select-border);
-  border-radius: 0.25em;
+  border-radius: 5px;
   padding: 0.25em 0.5em;
 }
 /* gets rid of focus blue box effect browser adds */
