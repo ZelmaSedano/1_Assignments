@@ -8,6 +8,7 @@ for (let i = 0; i < navItems.length; i++) {
   // remember to remove the ; inside the quotes from the CSS
 }
 /*********************************/
+// test comment
 
 /*** Button ***********************/
 // 2) Created a clickable button that can take user's email address and add them to a newsletter
