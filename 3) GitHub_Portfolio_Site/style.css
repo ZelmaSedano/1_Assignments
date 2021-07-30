@@ -28,7 +28,7 @@ section.hero-and-header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
-  margin: 0 50px;
+  margin: 0 70px;
 }
 
 .nav-logo {
@@ -213,6 +213,7 @@ p {
   font-weight: 100;
 }
 h3 {
+  font-size: 22px;
   margin: 20px 0;
   color: #696969;
 }
