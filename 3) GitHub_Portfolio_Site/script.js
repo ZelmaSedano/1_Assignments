@@ -1,3 +1,9 @@
-// test comment 1
-// test comment 2
-// test comment 3
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', mobileMenu);
+
+function mobileMenu() {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+}
