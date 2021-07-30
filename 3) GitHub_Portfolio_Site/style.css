@@ -7,26 +7,37 @@
 /* wraps around entire navbar */
 section.hero-and-header {
   background-color: #ff9065;
+  height: 73vh;
 }
 
 .main-header {
+  /* centering magic */
+  display: flex;
+  align-items: center;
+  /* this pushes the divs inside apart */
+  justify-content: space-between;
+
   /* color & styling */
   background-color: #ff9065;
   color: white;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: lighter;
-  /* positioning */
-  /* this combo centers content inside div */
-  display: flex;
-  align-items: center;
-  /* this pushes the divs inside apart */
-  justify-content: space-between;
-  /* centers */
   width: 100%;
   position: fixed;
   margin: auto;
   height: 80px;
 }
+@media only screen and (max-width: 750px) {
+  .header-text {
+    font-size: 38px;
+    margin-left: 10px;
+  }
+
+  .nav-div {
+    display: none;
+  }
+}
+
 /* ZELMA VALENTIA */
 .header-text {
   display: flex;
@@ -43,7 +54,7 @@ section.hero-and-header {
   margin-right: 20px;
   cursor: pointer;
 }
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 768px) {
   .hamburger {
     display: none;
   }
@@ -79,6 +90,7 @@ button {
   color: white;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 100;
+  cursor: pointer;
   /* positioning */
   margin-left: 10px;
   padding: 5px 10px;
@@ -99,7 +111,13 @@ button {
   /* justify-content: center; */
 
   /* positioning */
-  margin: 180px 100px 120px 100px;
+  margin: 180px 100px 100px 100px;
+}
+@media only screen and (max-width: 768px) {
+  .hero-div {
+    flex-direction: column;
+    margin: 135px 100px 100px 100px;
+  }
 }
 .my-pic {
   max-height: 150px;
@@ -120,6 +138,12 @@ h2.hero-text {
   font-weight: 100;
   color: white;
 }
+@media only screen and (max-width: 768px) {
+  h2.hero-text {
+    font-size: 23px;
+    margin-top: 10px;
+  }
+}
 /********** END of Hero/Header Section *************/
 
 /*** About Section *****************/
@@ -130,10 +154,17 @@ section.about {
   justify-content: center;
 }
 .about-div {
-  margin: 30px 0 30px 40px;
+  display: inline;
+  margin: 20px 0 30px 50px;
   max-width: 700px;
   padding: 50px 90px;
 }
+@media only screen and (max-width: 768px) {
+  .about-div {
+    margin: 20px 0 30px 10px;
+  }
+}
+
 h3,
 p {
   font-family: 'Noto Sans JP', sans-serif;
@@ -144,7 +175,7 @@ h3 {
   color: #696969;
 }
 p {
-  font-size: 15px;
+  font-size: 16px;
   margin: 15px 0;
   color: #696969;
 }
@@ -153,11 +184,19 @@ p span {
   font-weight: 400;
 }
 
+.about-div .fa-linkedin-in,
+.about-div .fa-github,
+.about-div .fa-twitter {
+  color: #ff9065;
+  font-size: 20px;
+}
+.social-icons {
+  margin: 20px 0 0 -10px;
+}
+
 /********** END of About Section *************/
 
-/* add comments to Contact Section & learn */
-
-/*** Contact Section *****************/
+/*** Contact Section ************************/
 .contact {
   margin: 10px 0 50px 0;
 }
@@ -167,10 +206,15 @@ p span {
   }
 }
 
+.contact-text {
+  /* centering magic */
+  text-align: center;
+}
+
 .contact h4 {
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 200;
-  font-size: 20px;
+  font-size: 18px;
   color: #696969;
   text-align: center;
 }
@@ -202,6 +246,17 @@ Luckily, I figured out a work-around where I pushed the footer further down the 
 @media only screen and (max-width: 768px) {
   .styled-input {
     width: 100%;
+    margin-left: -20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #lname,
+  #phone,
+  #state,
+  #submit {
+    margin-left: -20px;
+    float: left;
   }
 }
 
@@ -238,17 +293,40 @@ input:focus {
   float: right;
 }
 
+/* styles placeholder text */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 0.7; /* Firefox */
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+}
+
 .state {
   margin-left: 64px;
-  width: 100%;
   height: 50px;
   position: relative;
   font-family: 'Noto Sans JP', sans-serif;
 }
+@media (max-width: 768px) {
+  .state {
+    margin-left: 0;
+  }
+}
 
 /* dropdown menu */
 select {
-  width: 700px;
+  /* color & style */
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+  background-color: #ff9065;
+  background-image: #ff9065;
+  color: rgb(243, 243, 243);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 100;
+  /* why won't it go wider??? */
+  width: 353px;
   height: 79px;
   min-width: 15ch;
   max-width: 30ch;
@@ -256,20 +334,16 @@ select {
   border: 1px solid var(--select-border);
   border-radius: 0.25em;
   padding: 0.25em 0.5em;
-  font-size: 1.25rem;
-  cursor: pointer;
-  line-height: 1.1;
-  background-color: #ff9065;
-  background-image: #ff9065;
-  color: rgb(243, 243, 243);
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 100;
+}
+/* gets rid of focus blue box effect browser adds */
+select:focus {
+  outline: 0;
 }
 @media (max-width: 768px) {
   select {
-    width: 200%;
     float: none;
     text-align: center;
+    width: 360px;
   }
 }
 
@@ -284,7 +358,7 @@ select {
   color: white;
   font-size: 18px;
   cursor: pointer;
-  margin: 20px 0 0 0;
+  margin: 40px 0 0 0;
   /* slows down the transform effect */
   transition: all 300ms ease;
 }
@@ -292,12 +366,12 @@ select {
   /* button moves down 1px when hovered over */
   transform: translateY(1px);
 }
-
 @media (max-width: 768px) {
   .submit-btn {
     width: 100%;
     float: none;
     text-align: center;
+    margin-top: 50px;
   }
 }
 
@@ -315,11 +389,11 @@ input[type='checkbox']:checked + label {
 .footer {
   background-color: #ff9065;
   height: 50px;
-  margin: 600px 0 -10px 0;
+  margin: 600px 0 0 0;
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 768px) {
   .footer {
-    margin: 100px 0 0 0;
+    margin: 0px 0 0 0;
   }
 }
 .footer-div {
@@ -329,20 +403,23 @@ input[type='checkbox']:checked + label {
   justify-content: center;
   text-align: center;
 }
-.footer-div p {
+
+.footer p {
+  margin: 10px 10px 0 0;
+  font-size: 17px;
   color: white;
+  font-weight: 100;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.footer-div .fa-linkedin-in,
+.footer-div .fa-github,
+.footer-div .fa-twitter {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 /****** MOBILE view *******/
-@media only screen and (max-width: 750px) {
-  .header-text {
-    font-size: 38px;
-    margin-left: 10px;
-  }
-
-  .nav-div {
-    display: none;
-  }
-}
 
 /* change hero-div to display block in mobile */

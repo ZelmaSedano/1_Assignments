@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css" />
   <script defer src="js/script.js" defer></script>
 
-  <!-- FONT AWESOME -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
     integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
@@ -23,7 +23,7 @@
 <body>
 
   <section class='hero-and-header wave'>
-    <!------------------- Header ------------------->
+    <!------------------- Header/Navbar ------------------->
     <div class='main-header'>
       <h1 class='header-text'>Zelma.</h1>
       <!-- Hamburger Menu -->
@@ -61,19 +61,32 @@
     <div class='about-div'>
       <h3>About me.</h3>
 
-      <p class='high'>Designer. Foodie. Dreamer.</p>
+      <p>Designer. Foodie. Dreamer.</p>
 
-      <p>Chicago via Oslo, Norway via Mississippi. I am a Southern LatinX who looks for beauty in all things, the wonder
-        in every story, and the next big idea.</p>
+      <p>Chicago via Oslo, Norway via Mississippi. I am a Southern LatinX who looks for beauty in all things, the
+        wonderin every story, and the next big idea.</p>
 
-      <p class='high'>Say hi on Twitter <span>@TSockk.</span></p>
+      <p>I believe my background in Psychology is what makes me a great designer, and that my experience in Finance
+        makes me an efficient creator.</p>
+
+      <p>Say hi on Social Media!</p>
+
+      <div class='social-icons'>
+        <a href='www.linkedin.com/in/zelma-sedano-hagberg' alt="Zelma's LinkedIn" target="_blank"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href='https://github.com/ZelmaSedano' alt="Zelma's GitHub"><i class="fab fa-github" target="_blank"></i></a>
+        <a href='https://twitter.com/TSockk' alt="Zelma's Instagram"><i class="fab fa-twitter" target="_blank"></i></a>
+      </div>
+
     </div>
+
   </section>
 
   <!------------------ Contact Section ------------------->
   <section class="contact">
     <div class='contact-text'>
-      <h4>I'd love to hear from you! But this form doesn't work, yet.</h4>
+      <h4>I'd love to hear from you!</h4>
+      <h4>But this form doesn't work, yet...</h4>
     </div>
     <!-- Form -->
     <div class="input-container">
@@ -81,12 +94,12 @@
       <!-- First Name -->
       <div class="styled-input">
         <!-- input tag, holds placeholder and id's -->
-        <input type="text" id='fname' name='fname' placeholder='First Name' required />
+        <input type="text" id='fname' pattern='[A-Za-z]' name='fname' placeholder='First Name' required />
         <label for='fname'></label>
       </div>
 
       <div class="styled-input phone">
-        <input type="text" id='lname' name='lname' placeholder='Last Name' required />
+        <input type="text" id='lname' pattern='[A-Za-z]' name='lname' placeholder='Last Name' required />
         <label for='lname'></label>
       </div>
 
@@ -97,7 +110,8 @@
 
       <!-- keep phone class, it floats input right in CSS -->
       <div class='styled-input phone'>
-        <input type='tel' id='phone' name='phone' placeholder="Phone Number" required />
+        <!-- only numbers will be submitted -->
+        <input type='tel' id='phone' pattern="^\d{3}-\d{3}-\d{4}$" name='phone' placeholder="Phone Number" />
         <label for='phone'></label>
       </div>
 
@@ -108,10 +122,10 @@
       </div>
 
       <div class='styled-input'>
-        <input type="city" class="form-control" id="inputCity" placeholder="City" required>
+        <input type="city" id='city' class="form-control" pattern='[A-Za-z]' id="inputCity" placeholder="City" required>
       </div>
 
-      <div class='styled-input state' style="width: 200px;">
+      <div class='styled-input state'>
         <select name="state" id="state">
           <option value="" selected="selected">Select a State</option>
           <option value="AL">Alabama</option>
@@ -170,7 +184,7 @@
       <!-- END ofAddress -->
 
       <!-- Submit Button-->
-      <button class="submit-btn">Contact Zelma</button>
+      <button class="submit-btn" id='submit'>Contact Zelma</button>
 
     </div>
   </section>
@@ -178,7 +192,13 @@
 
   <section class='footer'>
     <div class='footer-div'>
-      <p>Thanks for visiting! Come back soon <3< /p>
+      <p>Come back soon! In the meantime...</p>
+      <div class='social-icons'>
+        <a href='www.linkedin.com/in/zelma-sedano-hagberg' alt="Zelma's LinkedIn" target="_blank"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href='https://github.com/ZelmaSedano' alt="Zelma's GitHub"><i class="fab fa-github" target="_blank"></i></a>
+        <a href='https://twitter.com/TSockk' alt="Zelma's Instagram"><i class="fab fa-twitter" target="_blank"></i></a>
+      </div>
     </div>
   </section>
 
