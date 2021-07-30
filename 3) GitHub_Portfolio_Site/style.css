@@ -411,6 +411,7 @@ input[type='checkbox']:checked + label {
   font-weight: 100;
   font-family: 'Noto Sans JP', sans-serif;
 }
+/* test comment */
 
 .footer-div .fa-linkedin-in,
 .footer-div .fa-github,
