@@ -97,7 +97,7 @@ button {
     flex-direction: column;
     background-color: #ff9065;
     width: 100%;
-    height: 60.5vh;
+    height: 76.5vh;
     text-align: center;
     transition: 0.3s;
     /* fun shadow effect */
@@ -109,8 +109,9 @@ button {
   }
 
   .nav-item {
-    margin: 2.5rem 0;
+    margin: 2rem 0;
   }
+
   button {
     margin-left: 0;
     margin-bottom: 20px;
@@ -222,9 +223,11 @@ p {
   margin: 15px 0;
   color: #696969;
 }
-p span {
-  color: #ff9065;
-  font-weight: 400;
+
+p.say-hi {
+  font-size: 18px;
+  font-weight: 200;
+  margin-top: 30px;
 }
 
 .about-div .fa-linkedin-in,
@@ -235,7 +238,7 @@ p span {
   margin-right: 15px;
 }
 .social-icons {
-  margin: 30px 0 0 0;
+  margin: 15px 0 0 0;
 }
 
 /********** END of About Section *************/
