@@ -4,7 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 3) Include a viewport meta tag -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 2) Open-Graph Meta Data Tags: Determine How Articles Show Up on Social Media -->
+  <meta property="og:title" content="Zelma's Portfolio" />
+  <meta property="og:description" content="A cooky design lady transitioning into web development." />
+
+
   <title>Zelma Valentia</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js" defer></script>
@@ -79,10 +85,10 @@
       <p class='say-hi'>Say hi on Social Media:</p>
 
       <div class='social-icons'>
-        <a href='www.linkedin.com/in/zelma-sedano-hagberg' alt="Zelma's LinkedIn" target="_blank"><i
+        <a href='www.linkedin.com/in/zelma-sedano-hagberg' alt="Zelma's LinkedIn" role="link" target="_blank"><i
             class="fab fa-linkedin-in"></i></a>
-        <a href='https://github.com/ZelmaSedano' alt="Zelma's GitHub"><i class="fab fa-github" target="_blank"></i></a>
-        <a href='https://twitter.com/TSockk' alt="Zelma's Instagram"><i class="fab fa-twitter" target="_blank"></i></a>
+        <a href='https://github.com/ZelmaSedano' alt="Zelma's GitHub"><i class="fab fa-github"  role="link" target="_blank"></i></a>
+        <a href='https://twitter.com/TSockk' alt="Zelma's Instagram"><i class="fab fa-twitter"  role="link" target="_blank"></i></a>
       </div>
 
     </div>
@@ -103,6 +109,7 @@
         <div class="styled-input">
           <!-- input tag, holds placeholder and id's -->
           <input type="text" id='fname' name='fname' placeholder='First Name' required />
+          <!-- the form that I worked off of had labels, but they are invisible -->
           <label for='fname'></label>
         </div>
 
@@ -192,7 +199,7 @@
         <!-- END ofAddress -->
 
         <!-- Submit Button-->
-        <button class="submit-btn" id='submit'>Contact Zelma</button>
+        <button class="submit-btn" id='submit tabindex="0" role="button" aria-pressed="false"'>Contact Zelma</button>
       </form>
     </div>
   </section>
