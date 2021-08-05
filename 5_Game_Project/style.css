@@ -1,7 +1,7 @@
 body {
-  background-color: #7bbe9c;
+  background-color: #84cba8;
   height: 100vh;
-
+  font-family: 'Roboto', sans-serif;
   align-items: center;
   justify-content: center;
   /* aligns all text in center */
@@ -9,15 +9,16 @@ body {
 }
 
 .header-text {
-  font-size: 25px;
-  color: rgb(44, 44, 44);
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  color: rgb(80, 68, 68);
+  font-weight: 200;
   line-height: 30px;
   padding-top: 1px;
 }
 
 .header-text span {
-  color: rgb(158, 71, 71);
+  color: rgb(161, 59, 59);
+  font-size: 55px;
 }
 
 .coin-and-button {
@@ -54,8 +55,9 @@ button {
 }
 /* hover effect */
 #button:hover {
-  opacity: 0.5;
+  opacity: 0.7;
   background-color: #5261e9;
+  transform: translateY(1px);
 }
 
 /* animation effect */

@@ -28,6 +28,5 @@ button.onclick = function () {
 
 /* To-Do:
   - add favicon
-  - change background color
   - how to have coin automatically loaded on page? 
 */
