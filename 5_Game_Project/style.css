@@ -62,7 +62,7 @@ button {
 
 /* animation effect */
 .animate-coin {
-  animation: flip 2s 1;
+  animation: flip 1s 1;
 }
 /* animation effect using keyframes */
 @keyframes flip {
