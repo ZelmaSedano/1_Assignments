@@ -1,101 +1,130 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { useInterval } from './useInterval';
-import {
-  CANVAS_SIZE,
-  SNAKE_START,
-  APPLE_START,
-  SCALE,
-  SPEED,
-  DIRECTIONS,
-} from './constants';
+import React, { useEffect, useState } from 'react';
+import SquareComponent from './modules/SquareComponent';
 
-const App = () => {
-  const canvasRef = useRef();
-  const [snake, setSnake] = useState(SNAKE_START);
-  const [apple, setApple] = useState(APPLE_START);
-  const [dir, setDir] = useState([0, -1]);
-  const [speed, setSpeed] = useState(null);
-  const [gameOver, setGameOver] = useState(false);
+// clears all the square values
+const clearState = ['', '', '', '', '', '', '', '', '', ''];
 
-  useInterval(() => gameLoop(), speed);
+// based off this YouTube Tutorial: https://www.youtube.com/watch?v=ZH9RXSVjj4Y
 
-  const endGame = () => {
-    setSpeed(null);
-    setGameOver(true);
+// App Component
+function App() {
+  // Two States: 1) gameState, 2) isXChange
+  //**  determines the winner?************************************************************???
+  const [gameState, updateGameState] = useState(clearState);
+  // changes X to O
+  const [isXChange, updateIsXChange] = useState(false);
+
+  // click function that an index
+  const onUserClicked = (index) => {
+    // takes the array from gameState
+    let strings = Array.from(gameState);
+    // ** checks the array from gameState, if it has the index, just return*****************???
+    if (strings[index]) return;
+    strings[index] = isXChange ? 'X' : '0';
+    updateIsXChange(!isXChange);
+    updateGameState(strings);
   };
 
-  const moveSnake = ({ keyCode }) =>
-    keyCode >= 37 && keyCode <= 40 && setDir(DIRECTIONS[keyCode]);
-
-  const createApple = () =>
-    apple.map((_a, i) => Math.floor(Math.random() * (CANVAS_SIZE[i] / SCALE)));
-
-  const checkCollision = (piece, snk = snake) => {
-    if (
-      piece[0] * SCALE >= CANVAS_SIZE[0] ||
-      piece[0] < 0 ||
-      piece[1] * SCALE >= CANVAS_SIZE[1] ||
-      piece[1] < 0
-    )
-      return true;
-
-    for (const segment of snk) {
-      if (piece[0] === segment[0] && piece[1] === segment[1]) return true;
-    }
-    return false;
+  const clearGame = () => {
+    updateGameState(clearState);
   };
-
-  const checkAppleCollision = (newSnake) => {
-    if (newSnake[0][0] === apple[0] && newSnake[0][1] === apple[1]) {
-      let newApple = createApple();
-      while (checkCollision(newApple, newSnake)) {
-        newApple = createApple();
-      }
-      setApple(newApple);
-      return true;
-    }
-    return false;
-  };
-
-  const gameLoop = () => {
-    const snakeCopy = JSON.parse(JSON.stringify(snake));
-    const newSnakeHead = [snakeCopy[0][0] + dir[0], snakeCopy[0][1] + dir[1]];
-    snakeCopy.unshift(newSnakeHead);
-    if (checkCollision(newSnakeHead)) endGame();
-    if (!checkAppleCollision(snakeCopy)) snakeCopy.pop();
-    setSnake(snakeCopy);
-  };
-
-  const startGame = () => {
-    setSnake(SNAKE_START);
-    setApple(APPLE_START);
-    setDir([0, -1]);
-    setSpeed(SPEED);
-    setGameOver(false);
-  };
-
   useEffect(() => {
-    const context = canvasRef.current.getContext('2d');
-    context.setTransform(SCALE, 0, 0, SCALE, 0, 0);
-    context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    context.fillStyle = 'pink';
-    snake.forEach(([x, y]) => context.fillRect(x, y, 1, 1));
-    context.fillStyle = 'lightblue';
-    context.fillRect(apple[0], apple[1], 1, 1);
-  }, [snake, apple, gameOver]);
+    let winner = checkWinner();
+    if (winner) {
+      clearGame();
+      alert(`Ta da ! ${winner} won the Game !`);
+    }
+  }, [gameState]);
+
+  const checkWinner = () => {
+    const lines = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+    console.log(
+      'Class: App, Function: checkWinner ==',
+      gameState[0],
+      gameState[1],
+      gameState[2]
+    );
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c] = lines[i];
+      if (
+        gameState[a] &&
+        gameState[a] === gameState[b] &&
+        gameState[a] === gameState[c]
+      ) {
+        return gameState[a];
+      }
+    }
+    return null;
+  };
 
   return (
-    <div role='button' tabIndex='0' onKeyDown={(e) => moveSnake(e)}>
-      <canvas
-        style={{ border: '1px solid black' }}
-        ref={canvasRef}
-        width={`${CANVAS_SIZE[0]}px`}
-        height={`${CANVAS_SIZE[1]}px`}
-      />
-      {gameOver && <div>GAME OVER!</div>}
-      <button onClick={startGame}>Start Game</button>
+    <div className='app-header'>
+      <p className='heading-text'>Tic-Tac-Toe</p>
+      <div className='row jc-center'>
+        <SquareComponent
+          className='b-bottom-right'
+          onClick={() => onUserClicked(0)}
+          state={gameState[0]}
+        />
+        <SquareComponent
+          className='b-bottom-right'
+          onClick={() => onUserClicked(1)}
+          state={gameState[1]}
+        />
+        <SquareComponent
+          className='b-bottom'
+          onClick={() => onUserClicked(2)}
+          state={gameState[2]}
+        />
+      </div>
+      <div className='row jc-center'>
+        <SquareComponent
+          className='b-bottom-right'
+          onClick={() => onUserClicked(3)}
+          state={gameState[3]}
+        />
+        <SquareComponent
+          className='b-bottom-right'
+          onClick={() => onUserClicked(4)}
+          state={gameState[4]}
+        />
+        <SquareComponent
+          className='b-bottom'
+          onClick={() => onUserClicked(5)}
+          state={gameState[5]}
+        />
+      </div>
+      <div className='row jc-center'>
+        <SquareComponent
+          className='b-right'
+          onClick={() => onUserClicked(6)}
+          state={gameState[6]}
+        />
+        <SquareComponent
+          className='b-right'
+          onClick={() => onUserClicked(7)}
+          state={gameState[7]}
+        />
+        <SquareComponent
+          onClick={() => onUserClicked(8)}
+          state={gameState[8]}
+        />
+      </div>
+      <button className='clear-button' onClick={clearGame}>
+        Clear Game
+      </button>
+      <p className='fc-aqua fw-600'>Zelma, Ink.</p>
     </div>
   );
-};
+}
 
 export default App;
