@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import SquareComponent from './modules/SquareComponent';
-import './App.css';
 
 // clears all the square values
 const clearState = ['', '', '', '', '', '', '', '', '', ''];
+
+// based off this YouTube Tutorial: https://www.youtube.com/watch?v=ZH9RXSVjj4Y
 
 // App Component
 function App() {
@@ -119,8 +120,9 @@ function App() {
         />
       </div>
       <button className='clear-button' onClick={clearGame}>
-        CLEAR
+        Clear Game
       </button>
+      <p className='fc-aqua fw-600'>Zelma, Ink.</p>
     </div>
   );
 }
