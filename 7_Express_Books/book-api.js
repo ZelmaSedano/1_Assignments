@@ -18,7 +18,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// App
+// App to push the books
+// we use post b/c we used the POST method in the HTML
 app.post('/book', (req, res) => {
   const book = req.body;
 
@@ -27,6 +28,11 @@ app.post('/book', (req, res) => {
   books.push(book);
 
   res.send('Book is added to the database');
+});
+
+// App to retrieve the books
+app.get('/books', (req, res) => {
+  res.json(books);
 });
 
 app.listen(port, () => console.log(`Books is running on port ${port}`));

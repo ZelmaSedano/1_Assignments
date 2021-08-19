@@ -1,5 +1,6 @@
 * {
   font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
 
 header {
@@ -22,6 +23,8 @@ input {
 label {
   font-size: 15px;
   margin-bottom: 10px;
+  margin-left: -30px;
+  margin-top: 10px;
 }
 
 .form-control {
@@ -46,8 +49,8 @@ button {
   cursor: pointer;
 }
 
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.close {
+  width: 100px;
+  font-size: 30px;
+  padding: 5px 10px;
 }
