@@ -8,6 +8,13 @@ const app = express();
 // set the port
 const port = 3000;
 
+// accessing the public folder where the cat loves
+app.use(express.static('public'));
+// connect html file
+app.get('/index.html', function (req, res) {
+  res.sendFile(__dirname + '/' + 'index.html');
+});
+
 // create an empty array to push the books into
 let books = [];
 
