@@ -1,5 +1,12 @@
+/* App.css */
 .App {
   text-align: center;
+}
+
+/* from tutorial */
+.row {
+  justify-content: center;
+  margin: 15px 0;
 }
 
 .App-logo {
