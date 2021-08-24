@@ -10,6 +10,14 @@ const App = () => {
   const { data, error, isLoading, setUrl } = UseFetch();
   console.log(data);
 
+  const getContent = () => {
+    console.log('running getcontent');
+    if (error) return <h2>Error when fetching: {error}</h2>;
+    if (!data && isLoading) return <h2>LOADING...</h2>;
+    if (!data) return null;
+    return <WeatherList weathers={data.list} />;
+  };
+
   return (
     <Container className='App'>
       <CitySelector
@@ -19,6 +27,9 @@ const App = () => {
           )
         }
       />
+
+      {/* don't forget the change */}
+      {getContent()}
 
       {/* conditionally render  */}
       {data && <WeatherList weathers={data.list} />}

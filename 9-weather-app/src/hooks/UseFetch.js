@@ -15,10 +15,17 @@ const UseFetch = (initialUrl) => {
     setError(null);
 
     fetch(url)
-      .then((response) => response.json())
+      .then((response) => {
+        console.log('response');
+        console.log(response);
+        response.json();
+      })
+
       .then((data) => {
         // error handling for nonexistent data
         setIsLoading(false);
+        console.log('data');
+        console.log(data);
         if (data.cod >= 400) {
           setError(data.message);
           return;

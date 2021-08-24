@@ -5,6 +5,7 @@ import classes from '../styles/WeatherCard.css';
 const WeatherCard = ({ dt, temp_min, temp_max, main, icon }) => {
   // create a date object with Date class constructor
   const date = new Date(dt);
+
   return (
     <div className={classes.Card}>
       <Card.Img
