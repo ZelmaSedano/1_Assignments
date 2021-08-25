@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import classes from '../styles/WeatherCard.css';
 
+// comment
 const WeatherCard = ({ dt, temp_min, temp_max, main, icon }) => {
   // create a date object with Date class constructor
   const date = new Date(dt);
