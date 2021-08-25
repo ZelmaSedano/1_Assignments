@@ -7,6 +7,7 @@ const UseFetch = (initialUrl) => {
   const [isLoading, setIsLoading] = useState(null);
   const [url, setUrl] = useState(initialUrl);
 
+  // comment
   useEffect(() => {
     if (!url) return;
     setIsLoading(true);
