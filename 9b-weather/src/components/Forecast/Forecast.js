@@ -25,7 +25,8 @@ const Forecast = () => {
     let uriEncodedCity = encodeURIComponent(city);
 
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?units=${unit}&q=${uriEncodedCity}&appid=81eaae9c9ea6f28f239fe73eebafd259`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${uriEncodedCity}&units=${unit}&appid=81eaae9c9ea6f28f239fe73eebafd259`
+      // `https://api.openweathermap.org/data/2.5/weather?units=${unit}&q=${uriEncodedCity}&appid=81eaae9c9ea6f28f239fe73eebafd259`
       // {
       //   method: 'GET',
       //   headers: {
@@ -36,13 +37,15 @@ const Forecast = () => {
     )
       .then((response) => response.json())
       .then((response) => {
-        if (response.cod !== 200) {
-          throw new Error();
+        // 2nd version: 200 is a string
+        if (response.cod !== '200') {
+          throw new Error('message');
         }
 
         setResponseObj(response);
         setLoading(false);
       })
+
       .catch((err) => {
         setError(true);
         setLoading(false);
@@ -87,7 +90,37 @@ const Forecast = () => {
           Get Forecast
         </button>
       </form>
-      <Conditions responseObj={responseObj} error={error} loading={loading} />
+      {/* repeat 5 times */}
+      <Conditions
+        responseObj={responseObj}
+        error={error}
+        loading={loading}
+        index={0}
+      />
+      <Conditions
+        responseObj={responseObj}
+        error={error}
+        loading={loading}
+        index={8}
+      />
+      <Conditions
+        responseObj={responseObj}
+        error={error}
+        loading={loading}
+        index={16}
+      />
+      <Conditions
+        responseObj={responseObj}
+        error={error}
+        loading={loading}
+        index={24}
+      />
+      <Conditions
+        responseObj={responseObj}
+        error={error}
+        loading={loading}
+        index={32}
+      />
     </div>
   );
 };
