@@ -99,30 +99,35 @@ const Forecast = () => {
           error={error}
           loading={loading}
           index={0}
+          className='card'
         />
         <Conditions
           responseObj={responseObj}
           error={error}
           loading={loading}
           index={8}
+          className='card'
         />
         <Conditions
           responseObj={responseObj}
           error={error}
           loading={loading}
           index={16}
+          className='card'
         />
         <Conditions
           responseObj={responseObj}
           error={error}
           loading={loading}
           index={24}
+          className='card'
         />
         <Conditions
           responseObj={responseObj}
           error={error}
           loading={loading}
           index={32}
+          className='card'
         />
       </div>
     </div>

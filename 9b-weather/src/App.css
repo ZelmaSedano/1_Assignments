@@ -1,5 +1,4 @@
 .App {
-  display:flex;
   flex-direction: column;
   min-height: 100vh;
 }
@@ -27,11 +26,32 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #EEEEEE;
+  background: #eeeeee;
   font-size: small;
   text-align: center;
 }
 
 header {
   padding: 25px;
+}
+
+/* it worked! */
+/* if you put the code in a lower CSS, it won't work - Dino helped me fix this */
+.cards {
+  display: flex;
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto); */
+}
+
+.card {
+  flex: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .cards {
+    /* changes to column in mobile view */
+    flex-direction: column;
+  }
 }
