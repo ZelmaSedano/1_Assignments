@@ -3,6 +3,7 @@ import Conditions from '../Conditions/Conditions';
 import { textInput, Radio, Button } from './Forecast.module.css';
 
 const Forecast = () => {
+  // states that set the value for city, unit, responseObj (json), and error
   let [city, setCity] = useState('');
   let [unit, setUnit] = useState('imperial');
   let [responseObj, setResponseObj] = useState({});
@@ -39,7 +40,7 @@ const Forecast = () => {
       .then((response) => {
         // 2nd version: 200 is a string
         if (response.cod !== '200') {
-          throw new Error('message');
+          throw new Error();
         }
 
         setResponseObj(response);
@@ -90,37 +91,40 @@ const Forecast = () => {
           Get Forecast
         </button>
       </form>
-      {/* repeat 5 times */}
-      <Conditions
-        responseObj={responseObj}
-        error={error}
-        loading={loading}
-        index={0}
-      />
-      <Conditions
-        responseObj={responseObj}
-        error={error}
-        loading={loading}
-        index={8}
-      />
-      <Conditions
-        responseObj={responseObj}
-        error={error}
-        loading={loading}
-        index={16}
-      />
-      <Conditions
-        responseObj={responseObj}
-        error={error}
-        loading={loading}
-        index={24}
-      />
-      <Conditions
-        responseObj={responseObj}
-        error={error}
-        loading={loading}
-        index={32}
-      />
+
+      <div className='cards'>
+        {/* repeat 5 times */}
+        <Conditions
+          responseObj={responseObj}
+          error={error}
+          loading={loading}
+          index={0}
+        />
+        <Conditions
+          responseObj={responseObj}
+          error={error}
+          loading={loading}
+          index={8}
+        />
+        <Conditions
+          responseObj={responseObj}
+          error={error}
+          loading={loading}
+          index={16}
+        />
+        <Conditions
+          responseObj={responseObj}
+          error={error}
+          loading={loading}
+          index={24}
+        />
+        <Conditions
+          responseObj={responseObj}
+          error={error}
+          loading={loading}
+          index={32}
+        />
+      </div>
     </div>
   );
 };
