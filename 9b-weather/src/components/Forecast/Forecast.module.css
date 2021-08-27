@@ -6,12 +6,13 @@
   border-radius: 5px;
   display: block;
   margin: 5px auto;
-  color: #c7c7c7;
+  color: #d6d6d6;
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 0.15);
 }
 
 /* changes color of placeholder text */
 ::placeholder {
-  color: #c7c7c7;
+  color: #d6d6d6;
 }
 
 .textInput:focus {
@@ -22,7 +23,7 @@
 
 .Radio {
   font-size: 18px;
-  color: #c7c7c7;
+  color: #d6d6d6;
   letter-spacing: 0.5px;
   padding: 5px;
 }
