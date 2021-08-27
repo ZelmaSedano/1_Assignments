@@ -1,10 +1,16 @@
 .textInput {
   font-size: large;
-  border: 1px solid #eeeeee;
+  border: 1px solid #33527a;
+  background: #33527a;
   padding: 5px;
-  border-radius: 3px;
+  border-radius: 5px;
   display: block;
   margin: 5px auto;
+}
+
+/* changes color of placeholder text */
+::placeholder {
+  color: white;
 }
 
 .textInput:focus {
@@ -14,16 +20,19 @@
 }
 
 .Radio {
-  font-size: small;
+  font-size: 15px;
+  color: white;
+  padding: 5px;
 }
 
 .Button {
   display: block;
-  margin: 10px auto;
-  padding: 0.5rem;
-  font-size: 1em;
+  margin: 20px auto;
+  padding: 10px 15px;
+  font-size: 20px;
   background: darkcyan;
   border-radius: 5px;
+  border: none;
   color: white;
   cursor: pointer;
 }

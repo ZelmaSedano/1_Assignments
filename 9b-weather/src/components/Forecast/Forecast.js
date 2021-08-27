@@ -56,7 +56,7 @@ const Forecast = () => {
 
   return (
     <div>
-      <h2>Find Current Weather Conditions</h2>
+      <h2 className='forecast-text'>5-day Forecast</h2>
       <form onSubmit={getForecast}>
         <input
           type='text'

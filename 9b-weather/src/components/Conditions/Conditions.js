@@ -1,44 +1,47 @@
+// comment
+// day of the week
+// const date = new Date(props.responseObj.list[props.index].dt_txt);
+
+// const daysOfTheWeek = {
+//   0: 'Sunday',
+//   1: 'Monday',
+//   2: 'Tuesday',
+//   3: 'Wednesday',
+//   4: 'Thursday',
+//   5: 'Friday',
+//   6: 'Saturday',
+// };
+
+// const day = daysOfTheWeek[date.getDay()];
+// const date = new Date(props.responseObj.list[props.index].dt);
+
+// const unixTimestamp = props.responseObj.list[props.index].dt;
+// const milliseconds = unixTimestamp * 1000;
+// const dateObject = new Date(milliseconds);
+// const humanDateFormat = dateObject.toLocaleDateString();
+
 import React from 'react';
 import { Wrapper, Small, Loader } from './Conditions.module.css';
 
 const conditions = (props) => {
-  // day of the week
-  // const date = new Date(props.responseObj.list[props.index].dt_txt);
-
-  // const daysOfTheWeek = {
-  //   0: 'Sunday',
-  //   1: 'Monday',
-  //   2: 'Tuesday',
-  //   3: 'Wednesday',
-  //   4: 'Thursday',
-  //   5: 'Friday',
-  //   6: 'Saturday',
-  // };
-
-  // const day = daysOfTheWeek[date.getDay()];
-  // const date = new Date(props.responseObj.list[props.index].dt);
-
   return (
     <div className={Wrapper}>
       {/* error handling */}
       {props.error && (
         <small className={Small}>Please enter a valid city.</small>
       )}
-
       {/* loading image, if data isn't avaialble */}
       {props.loading && <div className={Loader} />}
 
-      {/* actual component: '200' = success status code */}
       {/* setresponseObj(response) from json data - means responseObj = json data */}
       {props.responseObj.cod === '200' ? (
         <div>
           <p>
-            {/* city name */}
-            {/* <strong>{props.responseObj.city.name}</strong> */}
-            {props.responseObj.list[props.index].dt_txt}
+            <strong>{props.responseObj.city.name}</strong>
           </p>
           {/* {day} */}
           {/* {date} */}
+          {/* {humanDateFormat} */}
           <img
             src={`http://openweathermap.org/img/wn/${
               props.responseObj.list[props.index].weather[0].icon
@@ -49,9 +52,8 @@ const conditions = (props) => {
           <p>
             {/* list[0].main.temp is the path to temp in json file */}
             {Math.round(props.responseObj.list[props.index].main.temp)} degrees
-            out with{' '}
-            {props.responseObj.list[props.index].weather[0].description} at {}
           </p>
+          <p>{props.responseObj.list[props.index].weather[0].description}</p>
         </div>
       ) : null}
     </div>
@@ -59,4 +61,3 @@ const conditions = (props) => {
 };
 
 export default conditions;
-// comment

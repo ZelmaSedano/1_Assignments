@@ -1,34 +1,49 @@
 .App {
   flex-direction: column;
   min-height: 100vh;
+  background-image: url('./wow.jpeg');
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 75px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+.header {
+  margin-top: 0px;
+}
+
+.forecast-text {
+  padding-bottom: 15px;
+  margin-top: 0;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: white;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 300px;
+  background-color: hsl(220, 13%, 18%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 15px;
+
+  font-weight: 100;
   color: white;
+  font-size: 50px;
+  background-image: url('./wow.jpeg');
+  padding: 0;
 }
 
 main {
   flex-grow: 1;
   text-align: center;
   padding: 25px;
-}
-
-footer {
-  padding: 2px;
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #eeeeee;
-  font-size: small;
-  text-align: center;
+  padding: 0;
 }
 
 header {
@@ -49,7 +64,7 @@ header {
   flex: 1;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
   .cards {
     /* changes to column in mobile view */
     flex-direction: column;
