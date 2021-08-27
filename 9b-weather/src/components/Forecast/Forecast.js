@@ -7,6 +7,7 @@ const Forecast = () => {
   let [city, setCity] = useState('');
   let [unit, setUnit] = useState('imperial');
   let [responseObj, setResponseObj] = useState({});
+  let [weatherList, setweatherList] = useState([]);
   let [error, setError] = useState(false);
   let [loading, setLoading] = useState(false);
 
@@ -20,7 +21,6 @@ const Forecast = () => {
     // Clear state in preparation for new data
     setError(false);
     setResponseObj({});
-
     setLoading(true);
 
     let uriEncodedCity = encodeURIComponent(city);
@@ -43,7 +43,10 @@ const Forecast = () => {
           throw new Error();
         }
 
+        // takes take the json & saves json response as responseObj state
         setResponseObj(response);
+        // takes the json and saves the array 'list' as the state 'weatherList'
+        setweatherList(response.list);
         setLoading(false);
       })
 
@@ -94,14 +97,31 @@ const Forecast = () => {
 
       <div className='cards'>
         {/* repeat 5 times */}
-        <Conditions
+        {weatherList.map((item, index) => {
+          // lets you see the entire list
+          // console.log(item);
+          if (index % 8 === 0) {
+            return (
+              <Conditions
+                responseObj={responseObj}
+                error={error}
+                loading={loading}
+                index={index}
+                className='card'
+              />
+            );
+          } else {
+            return null;
+          }
+        })}
+        {/* <Conditions
           responseObj={responseObj}
           error={error}
           loading={loading}
           index={0}
           className='card'
-        />
-        <Conditions
+        /> */}
+        {/* <Conditions
           responseObj={responseObj}
           error={error}
           loading={loading}
@@ -128,7 +148,7 @@ const Forecast = () => {
           loading={loading}
           index={32}
           className='card'
-        />
+        /> */}
       </div>
     </div>
   );

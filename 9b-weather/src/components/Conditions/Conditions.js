@@ -1,29 +1,31 @@
 // comment
-// day of the week
-// const date = new Date(props.responseObj.list[props.index].dt_txt);
 
-// const daysOfTheWeek = {
-//   0: 'Sunday',
-//   1: 'Monday',
-//   2: 'Tuesday',
-//   3: 'Wednesday',
-//   4: 'Thursday',
-//   5: 'Friday',
-//   6: 'Saturday',
-// };
-
-// const day = daysOfTheWeek[date.getDay()];
 // const date = new Date(props.responseObj.list[props.index].dt);
-
-// const unixTimestamp = props.responseObj.list[props.index].dt;
-// const milliseconds = unixTimestamp * 1000;
-// const dateObject = new Date(milliseconds);
-// const humanDateFormat = dateObject.toLocaleDateString();
 
 import React from 'react';
 import { Wrapper, Small, Loader } from './Conditions.module.css';
 
 const conditions = (props) => {
+  // const unixTimestamp = props?.responseObj?.list?.[props?.index]?.dt;
+  // const milliseconds = unixTimestamp * 1000;
+  // const dateObject = new Date(milliseconds);
+  // const humanDateFormat = dateObject.toLocaleDateString();
+
+  // day of the week
+  const date = new Date(props?.responseObj?.list?.[props?.index]?.dt_txt);
+
+  const daysOfTheWeek = {
+    0: 'Sunday',
+    1: 'Monday',
+    2: 'Tuesday',
+    3: 'Wednesday',
+    4: 'Thursday',
+    5: 'Friday',
+    6: 'Saturday',
+  };
+
+  const day = daysOfTheWeek[date.getDay()];
+
   return (
     <div className={Wrapper}>
       {/* error handling */}
@@ -36,10 +38,12 @@ const conditions = (props) => {
       {/* setresponseObj(response) from json data - means responseObj = json data */}
       {props.responseObj.cod === '200' ? (
         <div>
-          <p>{props.responseObj.city.name}</p>
+          {/* {props.responseObj.city.name} */}
+          {/* <p>{humanDateFormat}</p> */}
+          <p>{day}</p>
           {/* {day} */}
           {/* {date} */}
-          {/* {humanDateFormat} */}
+
           <img
             src={`http://openweathermap.org/img/wn/${
               props.responseObj.list[props.index].weather[0].icon
@@ -54,6 +58,7 @@ const conditions = (props) => {
           <p>{props.responseObj.list[props.index].weather[0].description}</p>
         </div>
       ) : null}
+      {/* else, show null */}
     </div>
   );
 };

@@ -14,7 +14,7 @@
   font-weight: 100;
   font-size: 50px;
 
-  color: white;
+  color: #c7c7c7;
   background-image: url('./wow.jpeg');
   padding: 0;
   margin-bottom: -20px;
@@ -30,10 +30,10 @@ h1 {
 .forecast-text {
   padding-bottom: 15px;
   margin-top: 0;
-  font-size: 30px;
+  font-size: 33px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  color: white;
+  color: #c7c7c7;
 }
 
 main {
