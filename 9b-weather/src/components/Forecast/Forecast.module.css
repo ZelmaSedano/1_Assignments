@@ -1,0 +1,46 @@
+.textInput {
+  font-size: 22px;
+  border: 1px solid #33527a;
+  background: #33527a;
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+  margin: 5px auto;
+  color: #d6d6d6;
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 0.15);
+}
+
+/* changes color of placeholder text */
+::placeholder {
+  color: #d6d6d6;
+}
+
+.textInput:focus {
+  outline: none;
+  border-color: #719ece;
+  box-shadow: 0 0 10px rgb(50, 100, 153);
+}
+
+.Radio {
+  font-size: 18px;
+  color: #d6d6d6;
+  letter-spacing: 0.5px;
+  padding: 5px;
+}
+
+.Button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 15px;
+  font-size: 20px;
+
+  background: #4ca8ba;
+  border-radius: 5px;
+  border: none;
+  color: #dbdbdb;
+  cursor: pointer;
+}
+
+h2 {
+  font-weight: 200;
+}

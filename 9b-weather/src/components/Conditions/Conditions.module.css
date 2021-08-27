@@ -1,0 +1,31 @@
+.Wrapper {
+  min-height: 100px;
+  flex-direction: column;
+  /* fixed the spacing bug */
+  margin: 10px auto;
+  background-color: rgba(250, 250, 250, 0.2);
+  width: 200px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 0.15);
+}
+
+p {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  /* 1: x-coordinate, 2: y-coordinate, 3: blur-radius, 4: color */
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+/* this code was pulled from 
+https://www.w3schools.com/howto/howto_css_loader.asp */
+.Loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid rgb(90, 89, 89); /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+  margin: 10px auto;
+}
