@@ -1,18 +1,30 @@
 .App {
-  flex-direction: column;
   min-height: 100vh;
   background-image: url('./wow.jpeg');
   font-family: 'Roboto', sans-serif;
 }
 
-h1 {
-  font-size: 75px;
-  font-family: 'Roboto', sans-serif;
+.App-header {
+  /* without this, there is a big gap at the top? */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 15px;
   font-weight: 100;
+  font-size: 50px;
+
+  color: white;
+  background-image: url('./wow.jpeg');
+  padding: 0;
+  margin-bottom: -20px;
 }
 
-.header {
-  margin-top: 0px;
+h1 {
+  font-size: 80px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  margin-top: 30px;
 }
 
 .forecast-text {
@@ -22,21 +34,6 @@ h1 {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: white;
-}
-
-.App-header {
-  background-color: hsl(220, 13%, 18%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-
-  font-weight: 100;
-  color: white;
-  font-size: 50px;
-  background-image: url('./wow.jpeg');
-  padding: 0;
 }
 
 main {
@@ -68,5 +65,9 @@ header {
   .cards {
     /* changes to column in mobile view */
     flex-direction: column;
+    /* BUG: showing up even when blank in mobile */
+  }
+  h1 {
+    font-size: 60px;
   }
 }

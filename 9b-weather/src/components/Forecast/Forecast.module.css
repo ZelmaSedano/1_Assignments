@@ -1,11 +1,12 @@
 .textInput {
-  font-size: large;
+  font-size: 25px;
   border: 1px solid #33527a;
   background: #33527a;
   padding: 5px;
   border-radius: 5px;
   display: block;
   margin: 5px auto;
+  color: white;
 }
 
 /* changes color of placeholder text */
@@ -20,7 +21,7 @@
 }
 
 .Radio {
-  font-size: 15px;
+  font-size: 18px;
   color: white;
   padding: 5px;
 }
@@ -30,7 +31,7 @@
   margin: 20px auto;
   padding: 10px 15px;
   font-size: 20px;
-  background: darkcyan;
+  background: #4ca8ba;
   border-radius: 5px;
   border: none;
   color: white;
