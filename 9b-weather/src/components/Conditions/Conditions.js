@@ -36,9 +36,7 @@ const conditions = (props) => {
       {/* setresponseObj(response) from json data - means responseObj = json data */}
       {props.responseObj.cod === '200' ? (
         <div>
-          <p>
-            <strong>{props.responseObj.city.name}</strong>
-          </p>
+          <p>{props.responseObj.city.name}</p>
           {/* {day} */}
           {/* {date} */}
           {/* {humanDateFormat} */}

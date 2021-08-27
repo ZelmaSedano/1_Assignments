@@ -1,5 +1,5 @@
 .textInput {
-  font-size: 25px;
+  font-size: 22px;
   border: 1px solid #33527a;
   background: #33527a;
   padding: 5px;
@@ -36,4 +36,8 @@
   border: none;
   color: white;
   cursor: pointer;
+}
+
+h2 {
+  font-weight: 200;
 }
