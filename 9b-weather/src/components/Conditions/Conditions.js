@@ -12,6 +12,8 @@ const conditions = (props) => {
   // const humanDateFormat = dateObject.toLocaleDateString();
 
   // day of the week
+  // ? is known as optional chaining: docs = https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+  // each ? lets the program know to return undefined if there's no data instead of breaking entire project
   const date = new Date(props?.responseObj?.list?.[props?.index]?.dt_txt);
 
   const daysOfTheWeek = {

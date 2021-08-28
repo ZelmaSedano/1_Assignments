@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Conditions from '../Conditions/Conditions';
 import { textInput, Radio, Button } from './Forecast.module.css';
+import { REACT_APP_API_KEY } from '../../config';
 
 const Forecast = () => {
   // states that set the value for city, unit, responseObj (json), and error
