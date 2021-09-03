@@ -1,0 +1,57 @@
+.q-wrapper {
+  width: 70%;
+  background: white;
+  background: rgba(250, 250, 250, 0.78);
+  border-radius: 7px;
+  /* centering magic */
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+h3 {
+  font-size: 28px;
+  font-family: 'Besley', serif;
+  color: rgb(66, 44, 44);
+  padding: 25px;
+  margin: 0;
+}
+
+.q-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  /* top, right, bottom, left */
+  margin: 10px 10px 0px 10px;
+  background: white;
+  cursor: pointer;
+  font-size: 20px;
+}
+.q-btn:hover {
+  opacity: 0.7;
+  transform: translateY((1px));
+  background-color: #dcb5ff;
+}
+
+button {
+  color: black;
+}
+
+.correct-text {
+  /* color: rgb(27, 164, 17); */
+  color: rgb(70, 126, 255);
+  padding: 15px;
+  width: 80%;
+  text-align: center;
+  margin: 15px auto;
+}
+.incorrect-text {
+  color: rgb(238, 87, 192);
+  padding: 15px;
+}
+
+.last-page {
+  padding: 25px;
+  color: rgb(88, 198, 88);
+}

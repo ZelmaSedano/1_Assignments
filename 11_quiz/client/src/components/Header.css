@@ -1,0 +1,24 @@
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+}
+
+header {
+  font-size: 80px;
+  font-family: 'Besley', serif;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 700px) {
+  header {
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  header {
+    font-size: 45px;
+  }
+}
