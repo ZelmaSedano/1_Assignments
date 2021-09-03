@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+  /* flex-direction: column;
+  align-items: center; */
+  justify-content: center;
+  background: url('./ladies.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  filter: sepia(0.1);
+  min-height: 100vh;
+
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+button {
+  padding: 10px 25px;
+  font-size: 20px;
+  margin: 0px 20px 20px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
+  transform: translateY((1px));
+  background-color: #dcb5ff;
+}
