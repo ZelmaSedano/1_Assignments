@@ -31,6 +31,7 @@ let quizData = [
     correctDescription:
       'Correct! Grace Hopper.  There was a literal bug (moth) found in a supercomputer that caused her program to glitch.',
   },
+  {},
 ];
 
 // this is how you export files into index.js w/out using module in package.json

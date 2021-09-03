@@ -50,3 +50,8 @@ button {
   color: rgb(238, 87, 192);
   padding: 15px;
 }
+
+.last-page {
+  padding: 25px;
+  color: rgb(88, 198, 88);
+}

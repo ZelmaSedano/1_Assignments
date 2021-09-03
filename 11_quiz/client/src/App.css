@@ -24,3 +24,11 @@ button:hover {
   transform: translateY((1px));
   background-color: #dcb5ff;
 }
+
+.results {
+  color: rgb(219, 116, 205);
+  font-size: 35px;
+  font-weight: 700;
+  font-family: 'Besley', serif;
+  text-shadow: 1px 1px 2px black;
+}

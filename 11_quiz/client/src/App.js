@@ -7,11 +7,15 @@ function App() {
   const [data, setData] = useState(null);
   //used to changed index -> data[0], which will move through the questions
   const [count, setCount] = useState(0);
+  const [correctGuessState, setCorrectGuessState] = useState(0);
+  const [guessState, setGuessState] = useState('');
+
+  console.log('count:', count);
 
   // incrementing function
   function increment() {
     // -2 keeps it from going to default mockQuestion values
-    if (count <= data.length - 2) {
+    if (count <= data.length - 1) {
       setCount((prevCount) => prevCount + 1);
     }
   }
@@ -27,10 +31,31 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      {!data ? <p>'Loading...'</p> : <Question q={data[count]} />}
+      {!data ? (
+        <p>'Loading...'</p>
+      ) : (
+        <Question
+          q={data[count]}
+          setCorrectGuessState={setCorrectGuessState}
+          correctGuessState={correctGuessState}
+          guessState={guessState}
+          setGuessState={setGuessState}
+          count={count}
+        />
+      )}
       {/* 1) count increments b/c we are updating setCount; we are incrementing setCount w/ 'increment' function */}
-      <button onClick={increment}>Next</button>
+      <button
+        onClick={() => {
+          increment();
+          setGuessState('');
+        }}
+      >
+        Next
+      </button>
       {/* everytime you click the next button, it increments the number inside data brackets */}
+      <div className='results'>
+        You answered {correctGuessState} questions correctly
+      </div>
     </div>
   );
 }

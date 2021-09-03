@@ -13,39 +13,59 @@ const mockQuestion = {
 
 // destructure the props directly, then you can set a default prop
 // q = properties of a single question b/c I specified it as so below
-const Question = ({ q = mockQuestion }) => {
-  // scores the guesses they made
-  const [guessState, setGuessState] = useState('');
-
-  // create a counter or score state, every time the user guesses correctly
-  // if what they chose is correct, increment the score state
-  // at the end, say 'you got x out of x right'
+const Question = ({
+  q = mockQuestion,
+  setCorrectGuessState,
+  correctGuessState,
+  setGuessState,
+  guessState,
+  count,
+}) => {
+  // onClick function - if guessState is correct, then increment correctGuessState by 1
 
   return (
-    <div className='q-wrapper'>
-      <h3 className='q-title'>{q.title}</h3>
-      {/* has to be in curly braces*/}
-      {q.choices.map((item, index) => {
-        return (
-          <button
-            className='q-btn'
-            onClick={() => {
-              setGuessState(item);
-            }}
-          >
-            {item}
-          </button>
-        );
-      })}
-      {/* can't have an if/else statement w/in jsx, so we are using a ternary operator */}
-      {guessState === q.correct ? (
-        <p className='correct-text'> {q.correctDescription}</p>
+    <div>
+      {count >= 4 ? (
+        <div className='q-wrapper'>
+          <div>
+            <p className='last-page'>
+              Congratulations! You've finished the quiz.
+            </p>
+          </div>
+        </div>
       ) : (
-        <p className='incorrect-text'>Try Again!</p>
+        <div className='q-wrapper'>
+          <h3 className='q-title'>{q.title}</h3>
+          {q.choices.map((item, index) => {
+            return (
+              <button
+                className='q-btn'
+                onClick={() => {
+                  setGuessState(item);
+                  guessState === q.correct &&
+                    setCorrectGuessState(correctGuessState + 1);
+                }}
+              >
+                {item}
+              </button>
+            );
+          })}
+          {/* can't have an if/else statement w/in jsx, so we are using a ternary operator */}
+          {guessState === '' ? (
+            <p>
+              <br></br>
+            </p>
+          ) : guessState === q.correct ? (
+            <p className='correct-text'> {q.correctDescription}</p>
+          ) : (
+            <p className='incorrect-text'>Incorrect! Please proceed</p>
+          )}
+
+          {/* ^ don't use brackets around q.whatever when already inside brackets */}
+          {/* {JSON.stringify(q, null, 2)} */}
+          {/* ^this prints out the question data */}
+        </div>
       )}
-      {/* ^ don't use brackets around q.whatever when already inside brackets */}
-      {/* {JSON.stringify(q, null, 2)} */}
-      {/* ^this prints out the question data */}
     </div>
   );
 };
