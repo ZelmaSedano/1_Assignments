@@ -7,15 +7,14 @@
   background-size: cover;
   filter: sepia(0.1);
   min-height: 100vh;
-
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 button {
   padding: 10px 25px;
   font-size: 20px;
-  margin: 0px 20px 20px 20px;
+  margin: 20px 20px 20px 20px;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -27,7 +26,7 @@ button:hover {
 
 .results {
   color: rgb(219, 116, 205);
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 700;
   font-family: 'Besley', serif;
   text-shadow: 1px 1px 2px black;

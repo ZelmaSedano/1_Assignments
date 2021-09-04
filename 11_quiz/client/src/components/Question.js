@@ -52,9 +52,9 @@ const Question = ({
           })}
           {/* can't have an if/else statement w/in jsx, so we are using a ternary operator */}
           {guessState === '' ? (
-            <p>
+            <div>
               <br></br>
-            </p>
+            </div>
           ) : guessState === q.correct ? (
             <p className='correct-text'> {q.correctDescription}</p>
           ) : (
