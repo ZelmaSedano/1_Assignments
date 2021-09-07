@@ -15,10 +15,10 @@ const mockQuestion = {
 // q = properties of a single question b/c I specified it as so below
 const Question = ({
   q = mockQuestion,
-  setCorrectGuessState,
-  correctGuessState,
-  setGuessState,
   guessState,
+  setGuessState,
+  correctGuessState,
+  setCorrectGuessState,
   count,
 }) => {
   // onClick function - if guessState is correct, then increment correctGuessState by 1
