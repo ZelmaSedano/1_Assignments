@@ -1,0 +1,13 @@
+.child-h1 {
+  color: pink;
+}
+
+button {
+  padding: 10px 20px;
+  background: lightgray;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
