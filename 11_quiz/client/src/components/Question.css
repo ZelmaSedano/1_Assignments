@@ -11,7 +11,7 @@
 }
 
 h3 {
-  font-size: 28px;
+  font-size: 30px;
   font-family: 'Besley', serif;
   color: rgb(66, 44, 44);
   padding: 25px;
@@ -53,5 +53,5 @@ button {
 
 .last-page {
   padding: 25px;
-  color: rgb(88, 198, 88);
+  color: rgb(59, 197, 123);
 }

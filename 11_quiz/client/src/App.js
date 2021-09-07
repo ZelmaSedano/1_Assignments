@@ -7,8 +7,9 @@ function App() {
   const [data, setData] = useState(null);
   //used to changed index -> data[0], which will move through the questions
   const [count, setCount] = useState(0);
-  const [correctGuessState, setCorrectGuessState] = useState(0);
+
   const [guessState, setGuessState] = useState('');
+  const [correctGuessState, setCorrectGuessState] = useState(0);
 
   console.log('count:', count);
 
@@ -36,10 +37,10 @@ function App() {
       ) : (
         <Question
           q={data[count]}
-          setCorrectGuessState={setCorrectGuessState}
-          correctGuessState={correctGuessState}
           guessState={guessState}
           setGuessState={setGuessState}
+          setCorrectGuessState={setCorrectGuessState}
+          correctGuessState={correctGuessState}
           count={count}
         />
       )}

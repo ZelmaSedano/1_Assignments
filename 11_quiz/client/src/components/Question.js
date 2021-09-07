@@ -15,10 +15,10 @@ const mockQuestion = {
 // q = properties of a single question b/c I specified it as so below
 const Question = ({
   q = mockQuestion,
-  setCorrectGuessState,
-  correctGuessState,
-  setGuessState,
   guessState,
+  setGuessState,
+  correctGuessState,
+  setCorrectGuessState,
   count,
 }) => {
   // onClick function - if guessState is correct, then increment correctGuessState by 1
@@ -52,9 +52,9 @@ const Question = ({
           })}
           {/* can't have an if/else statement w/in jsx, so we are using a ternary operator */}
           {guessState === '' ? (
-            <p>
+            <div>
               <br></br>
-            </p>
+            </div>
           ) : guessState === q.correct ? (
             <p className='correct-text'> {q.correctDescription}</p>
           ) : (

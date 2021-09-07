@@ -9,6 +9,7 @@ header {
   font-size: 80px;
   font-family: 'Besley', serif;
   font-weight: 500;
+  color: white;
 }
 
 @media screen and (max-width: 700px) {
