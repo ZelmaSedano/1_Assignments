@@ -1,38 +1,30 @@
-.App {
-  text-align: center;
+fieldset {
+  border: none;
+  margin: 1rem 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  /* For more about flexbox, see https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+header img {
+  height: 64px;
+  margin-right: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+aside {
+  margin-left: 2em;
+}
+
+footer {
+  margin-top: 1rem;
+  font-size: small;
+  color: gray;
 }
