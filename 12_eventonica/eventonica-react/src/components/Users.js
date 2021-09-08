@@ -1,14 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DeleteUser from './DeleteUser';
 
 function Users() {
+  // State
+  const [apiResponse, setApiResponse] = useState('');
+  console.log('apiResponse', apiResponse);
+
+  const getUsers = () => {
+    fetch('http://localhost:3000/users')
+      .then((res) => res.text())
+      .then((res) => setApiResponse(res));
+  };
+
+  useEffect(() => {
+    getUsers(); // useEffect will run getUsers() every time this component loads, as opposed to just the first time it is rendered.
+  });
+
   // 1) iterate through user list & display their name & email in the list? have a unique kkey for each list item
-  const marlin = { name: 'Marlin', email: 'marlin@gmail.com', id: '1' };
-  const nemo = { name: 'Nemo', email: 'nemo@gmail.com', id: '2' };
-  const dory = { name: 'Dory', email: 'dory@gmail.com', id: '3' };
 
   // States
-  const [users, setUsers] = useState([marlin, nemo, dory]);
+  // it's an array b/c it's stated so earlier in the tutorial
+  const [users, setUsers] = useState([]);
   // iterate over the list of users and create an <li> for each one
   const [name, setName] = useState('');
   const [id, setId] = useState('');
@@ -40,6 +52,7 @@ function Users() {
 
       {/* How to map & print info from above (not props, but similar) */}
       <ul id='users-list'>
+        {apiResponse}
         {users.map((item, index) => {
           // can only be one item, remember to add key={index}
           return (
