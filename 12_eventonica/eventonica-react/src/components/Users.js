@@ -15,13 +15,30 @@ const Users = () => {
   };
 
   const addUser = (newUser) => {
-    fetch('http://localhost:3000/users', {
+    fetch('http://localhost:3000/users/add', {
       /*Add user on server side */
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newUser),
+    }).then(() => getUsers());
+  };
+
+  // const deleteUser = (deleteId) => {
+  //   fetch(`http://localhost:3000/users/delete/${deleteId}`, {
+  //     /*Add user on server side */
+  //     mode: 'no-cors',
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/json' },
+  //   }).then(() => getUsers());
+  // };
+
+  const deleteUser = (userId) => {
+    fetch(`/users/${userId}`, {
+      /*Add user on server side */
+      method: 'DELETE',
     }).then(getUsers);
   };
+
   useEffect(() => {
     getUsers(); // useEffect will run getUsers() every time this component loads, as opposed to just the first time it is rendered. Empty array added witll stop inifinite runs
   }, []);
@@ -32,7 +49,7 @@ const Users = () => {
   // const dory = { name: "Dory", email: "dory@gmail.com" , id: "3"};
 
   //use setState to create uers and setUsers
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
 
   //use setstate to name field
   const [name, setName] = useState('');
@@ -49,24 +66,25 @@ const Users = () => {
     const newUser = { name, email, id };
     addUser(newUser);
   };
+
   //call getUsers after the onSubmit
 
-  console.log(users);
+  // console.log(users);
   //function for when user is deleted, we want the user object with that ID to be removed from the users list, filter creates a new array with all elements that pass the test implemented by the provided function.
   //creating new variable of deleteUsers and setting variable to deleteId
-  const deleteUser = (deleteId) => {
-    //declaring new variable newUsers, creating a new list and checks if the userid does not equal to deleteid, it will keep users in the list. If userid does equal delteId, we will not keep it in the list.
-    function test(user) {
-      if (user.id !== deleteId) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-    const newUsers = users.filter(test);
-    //setting state to newUsers, old list of users will be replaced by new list of users
-    setUsers(newUsers);
-  };
+  // const deleteUser = (deleteId) => {
+  //     //declaring new variable newUsers, creating a new list and checks if the userid does not equal to deleteid, it will keep users in the list. If userid does equal delteId, we will not keep it in the list.
+  //     function test (user){
+  //         if(user.id !== deleteId){
+  //             return true;
+  //         } else{
+  //             return false;
+  //         }
+  //     }
+  //     const newUsers = users.filter(test);
+  //     //setting state to newUsers, old list of users will be replaced by new list of users
+  //     setUsers(newUsers)
+  // };
 
   return (
     <>
@@ -115,10 +133,10 @@ const Users = () => {
               <div>
                 <label>User ID</label>
                 <input
-                  type='text'
+                  type='number'
                   id='add-user-id'
                   value={id}
-                  onChange={(e) => setId(e.target.value)}
+                  onChange={(e) => setId(Number(e.target.value))}
                 />
               </div>
             </fieldset>
@@ -126,7 +144,7 @@ const Users = () => {
             {/* reset button not working
                   <button onClick="document.getElementById('addUser').value='Add'">Reset</button> */}
           </form>
-          <DeleteUser deleteUser={deleteUser} />
+          <DeleteUser {...{ deleteUser }} />
         </div>
       </section>
     </>
