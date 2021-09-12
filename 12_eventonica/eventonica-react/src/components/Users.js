@@ -1,44 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import DeleteUser from './DeleteUser';
 import Events from './Events';
+
+// React Component called Users
 const Users = () => {
+  //set default for apiresponse to be an empty array
   const [apiResponse, setApiResponse] = useState([]);
+  // console.log('apiResponse', apiResponse); <- testing
 
-  console.log('apiResponse', apiResponse);
-
+  // Functions
+  // get list of users
   const getUsers = () => {
+    // fetch the route data
     fetch('http://localhost:3000/users')
       //turn my response into a JSON
       .then((res) => res.json())
       //set default for apiresponse to be an empty array
       .then((res) => setApiResponse(res));
   };
-
+  // add a user to list
   const addUser = (newUser) => {
+    // fetch the route data
     fetch('http://localhost:3000/users/add', {
-      /*Add user on server side */
+      /* Add user on server side */
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      // turn the JSON into a string so it can be printed?
       body: JSON.stringify(newUser),
     }).then(() => getUsers());
   };
-
-  // const deleteUser = (deleteId) => {
-  //   fetch(`http://localhost:3000/users/delete/${deleteId}`, {
-  //     /*Add user on server side */
-  //     mode: 'no-cors',
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/json' },
-  //   }).then(() => getUsers());
-  // };
-
+  // delete a user from list
   const deleteUser = (userId) => {
-    fetch(`/users/${userId}`, {
-      /*Add user on server side */
+    fetch(`http://localhost:3000/users/${userId}`, {
+      /* Delete user on server side */
       method: 'DELETE',
-    }).then(getUsers);
+    }).then(() => getUsers());
   };
-
+  // useEffect tells React that your component needs to do something after rendering
   useEffect(() => {
     getUsers(); // useEffect will run getUsers() every time this component loads, as opposed to just the first time it is rendered. Empty array added witll stop inifinite runs
   }, []);
@@ -69,33 +67,16 @@ const Users = () => {
 
   //call getUsers after the onSubmit
 
-  // console.log(users);
-  //function for when user is deleted, we want the user object with that ID to be removed from the users list, filter creates a new array with all elements that pass the test implemented by the provided function.
-  //creating new variable of deleteUsers and setting variable to deleteId
-  // const deleteUser = (deleteId) => {
-  //     //declaring new variable newUsers, creating a new list and checks if the userid does not equal to deleteid, it will keep users in the list. If userid does equal delteId, we will not keep it in the list.
-  //     function test (user){
-  //         if(user.id !== deleteId){
-  //             return true;
-  //         } else{
-  //             return false;
-  //         }
-  //     }
-  //     const newUsers = users.filter(test);
-  //     //setting state to newUsers, old list of users will be replaced by new list of users
-  //     setUsers(newUsers)
-  // };
-
   return (
     <>
       <section className='user-management'>
         <h2>User Management</h2>
 
         <ul id='users-list'>
-          {/* display all existing Users here, iterating through users with map,  transforming each user into a <li></li> and add u as the key */}
-          {apiResponse.map((users, i) => {
+          {/* display all existing Users here, iterating through users with map,  transforming each user into a <li></li> and add index as the key */}
+          {apiResponse.map((users, index) => {
             return (
-              <li key={i}>
+              <li key={index}>
                 User: {users.name}, Email: {users.email}, User ID: {users.id}
               </li>
             );
@@ -144,6 +125,7 @@ const Users = () => {
             {/* reset button not working
                   <button onClick="document.getElementById('addUser').value='Add'">Reset</button> */}
           </form>
+          {/* why spread operator? */}
           <DeleteUser {...{ deleteUser }} />
         </div>
       </section>
