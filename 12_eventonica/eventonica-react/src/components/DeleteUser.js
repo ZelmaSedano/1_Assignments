@@ -12,6 +12,7 @@ function DeleteUser({ deleteUser }) {
     deleteUser(deleteId);
     setDeleteId(0);
   };
+  // component part
   return (
     <>
       <div>
